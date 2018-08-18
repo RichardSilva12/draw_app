@@ -1,4 +1,3 @@
-#!/usr/bin/python3.4
 
 from tkinter import *
 
@@ -36,8 +35,8 @@ class Drawing(object):
 
         def move_mouse(event):
 
-            canvas.create_rectangle(event.x-2, event.y-2, event.x+2,
-                                    event.y+2, fill=draw_color, outline=draw_color)
+            canvas.create_rectangle(event.x-1, event.y-1, event.x+1,
+                                    event.y+1, fill=draw_color, outline=draw_color)
 
         canvas.bind('<B1-Motion>', move_mouse)
 
@@ -58,6 +57,7 @@ class Drawing(object):
         canvas.bind('<KeyPress>', key_press)
         canvas.focus_set()
 
+        root.resizable(width=False, height=False)
         root.mainloop()
 
 
